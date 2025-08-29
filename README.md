@@ -1,55 +1,64 @@
-# Spring API Project
+Spring API Project
 
-Este es un proyecto desarrollado utilizando **Spring Boot** que implementa una **API RESTful** para la gestión de productos. El proyecto sigue buenas prácticas de programación y arquitectura en capas, implementando características modernas, como **Lombok**, **Programación Funcional**, **API Streams**, **Lambdas**, **Referencias a Métodos**, **Java Optional**. Además, la capa de **persistencia de datos** está simulada utilizando una **lista en memoria**, sin conexión real a una base de datos.
+This project was developed using Spring Boot and implements a RESTful API for product management. The project follows best programming and layered architecture practices, implementing modern features such as Lombok, Functional Programming, Java Streams API, Lambdas, Method References, and Java Optional. Additionally, the data persistence layer is simulated using an in-memory list, without a real database connection.
 
-### Tecnologías utilizadas
-- **Java**
-- **Spring Boot**: Para la creación y gestión de la API.
-- **Lombok**: Para reducir el código repetitivo como getters, setters y constructores.
-- **Postman**: Herramienta para probar la API.
-- **Maven**: Para la gestión de dependencias y construcción del proyecto.
+Technologies Used
 
-### Arquitectura del Proyecto
+Java
 
-Este proyecto está estructurado utilizando **una arquitectura en capas** que mejora la mantenibilidad y escalabilidad:
+Spring Boot: For creating and managing the API.
 
-1. **Capa de Controladores (Controller)**: Maneja las solicitudes HTTP y las respuestas. Asegura que las peticiones lleguen correctamente a la capa de servicio.
-2. **Capa de Servicio (Service)**: Contiene la lógica de negocio.
-3. **Capa de Repositorio Simulado**: La persistencia de los productos está simulada utilizando una **lista en memoria** que actúa como almacenamiento temporal.
-4. **Modelo de Datos (Entity)**: Representa los datos que se gestionan en la API.
+Lombok: To reduce boilerplate code such as getters, setters, and constructors.
 
-### Capa de Repositorio Simulado
+Postman: Tool for testing the API.
 
-En lugar de una base de datos real, los datos de los productos se almacenan en una **lista en memoria**. Esta lista actúa como el "repositorio" que mantiene los objetos de productos durante la ejecución de la aplicación.
+Maven: For dependency management and project build.
 
+Project Architecture
 
-### Características del proyecto
+This project is structured using a layered architecture that improves maintainability and scalability:
 
-- **Operaciones CRUD completas**: La API permite realizar operaciones completas con los productos, como crear, leer, actualizar y eliminar productos.
-  - **POST**: Crear un nuevo producto.
-  - **GET**: Obtener productos por ID y obtener todos los productos.
-  - **PUT**: Actualizar los datos de un producto existente.
-  - **DELETE**: Eliminar un producto por ID.
+Controller Layer: Handles HTTP requests and responses. Ensures that requests are correctly routed to the service layer.
 
-- **Inyección de Dependencias**: El proyecto utiliza la inyección de dependencias proporcionada por Spring para una mayor modularidad y prueba.
+Service Layer: Contains the business logic.
 
-- **Manejo de errores**: La API responde adecuadamente a las solicitudes incorrectas o a los errores internos con un manejo adecuado de excepciones y códigos HTTP correspondientes.
+Simulated Repository Layer: Product persistence is simulated using an in-memory list that acts as temporary storage.
 
-- **Uso de Lombok**: Reduce el código repetitivo para crear getters, setters, constructores y métodos `toString()`.
+Data Model (Entity): Represents the data managed in the API.
 
-- **Uso de `Optional`**: En lugar de devolver valores nulos, se utilizan `Optional` para indicar que un valor podría no estar presente.
+Simulated Repository Layer
 
-- **Uso de `ResponseEntity`**: Para personalizar las respuestas HTTP y proporcionar códigos de estado adecuados en todas las respuestas.
+Instead of a real database, product data is stored in an in-memory list. This list acts as the "repository" that maintains product objects during application runtime.
 
-### Maneo de Endpoints
+Project Features
 
+Full CRUD Operations: The API allows full operations with products, such as create, read, update, and delete.
 
+POST: Create a new product.
 
-### Uso de Postman
+GET: Retrieve products by ID and get all products.
 
-Para probar esta API, puedes utilizar **Postman**. Los endpoints mencionados anteriormente están listos para ser probados en Postman. Asegúrate de configurar los métodos HTTP correspondientes (POST, GET, PUT, DELETE) para realizar las operaciones.
+PUT: Update an existing product.
 
-### Buenas prácticas
+DELETE: Delete a product by ID.
 
-- **Versionado de API**: La API está versionada, lo que permite futuras mejoras sin afectar a los consumidores existentes de la API.
-- **Manejo de excepciones**: Las excepciones se manejan de manera adecuada con mensajes de error claros y respuestas HTTP apropiadas.
+Dependency Injection: The project uses dependency injection provided by Spring for better modularity and testing.
+
+Error Handling: The API responds properly to invalid requests or internal errors with adequate exception handling and corresponding HTTP status codes.
+
+Use of Lombok: Reduces repetitive code for getters, setters, constructors, and toString() methods.
+
+Use of Optional: Instead of returning null values, Optional is used to indicate that a value may or may not be present.
+
+Use of ResponseEntity: To customize HTTP responses and provide proper status codes in all responses.
+
+API Endpoints
+Using Postman
+
+To test this API, you can use Postman. The endpoints mentioned above are ready to be tested in Postman. Make sure to configure the corresponding HTTP methods (POST, GET, PUT, DELETE) to perform the operations.
+
+Best Practices
+
+API Versioning: The API is versioned, allowing future improvements without affecting existing API consumers.
+
+Exception Handling: Exceptions are properly managed with clear error messages and appropriate HTTP responses.
